@@ -1,12 +1,24 @@
+import { useNavigate } from "react-router-dom";
+
 const MyHeader = () => {
+  const navigate = useNavigate();
   return (
     <header>
-      <div className="head_logo">Marr</div>
-      <ul className="head_menulist">
-        <li className="marrShorts">MarrShorts</li>
-        <li className="marrRanking">전국마라랭킹</li>
+      <div className="head-logo" onClick={() => navigate("/")}>
+        Marr
+      </div>
+      <ul className="head-menulist">
+        <li className="marrShorts" onClick={() => navigate("/shorts")}>
+          MarrShorts
+        </li>
+        <li className="marrRanking" onClick={() => navigate("/ranking")}>
+          전국마라랭킹
+        </li>
       </ul>
-      <img src={process.env.PUBLIC_URL + `assets/user_logo.png`} />
+      <img
+        src={process.env.PUBLIC_URL + `assets/user_logo.png`}
+        onClick={() => navigate("/my_page")}
+      />
     </header>
   );
 };

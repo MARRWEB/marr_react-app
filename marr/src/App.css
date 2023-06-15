@@ -37,3 +37,47 @@ header img {
   padding: 10px;
   cursor: pointer;
 }
+
+/* SearchBar */
+.SearchBar {
+  padding: 10px;
+}
+
+.SearchBar .search-wrapper {
+  background-color: #ececec;
+  border-radius: 30px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchBar .search-wrapper .input-search {
+  padding-left: 25px;
+  min-width : 550px;
+  min-height : 50px;
+
+  border: none;
+  border-radius: 30px;
+  background-color: #ececec;
+  outline: none;
+
+  font-size: 18px;
+}
+
+.SearchBar .search-wrapper .btn-search {
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.SearchBar .search-wrapper .btn-search > img {
+  height: 27px;
+  width: auto;
+}

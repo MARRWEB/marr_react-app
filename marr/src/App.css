@@ -4,8 +4,8 @@
 
 /* Header */
 header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-left: 40px;
   padding-right: 40px;
 
@@ -80,4 +80,10 @@ header img {
 .SearchBar .search-wrapper .btn-search > img {
   height: 27px;
   width: auto;
+}
+
+/* Map */
+.Map {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

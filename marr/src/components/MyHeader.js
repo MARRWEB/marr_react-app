@@ -16,7 +16,7 @@ const MyHeader = () => {
         </li>
       </ul>
       <img
-        src={process.env.PUBLIC_URL + `assets/user_logo.png`}
+        src={process.env.PUBLIC_URL + `assets/icon/user_icon.png`}
         onClick={() => navigate("/my_page")}
       />
     </header>

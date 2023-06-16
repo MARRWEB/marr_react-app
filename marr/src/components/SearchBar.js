@@ -17,7 +17,7 @@ const SearchBar = () => {
           }}
         />
         <button className="btn-search" type="button" alt="제출버튼">
-          <img src={process.env.PUBLIC_URL + `assets/search_icon.png`} />
+          <img src={process.env.PUBLIC_URL + `assets/icon/search_icon.png`} />
         </button>
       </div>
     </div>

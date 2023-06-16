@@ -87,3 +87,55 @@ header img {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* CardSection */
+.CardSection {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.CardSection .card-section-wrapper{
+  display:inline-block;
+  border-radius: 30px;
+  background-color: #ececec;
+}
+
+.CardSection .card-section-wrapper .card-section-title {
+}
+
+.CardSection .card-section-wrapper .card-section-title > h1 {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide {
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul {
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li > img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li > p {
+  font-style: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

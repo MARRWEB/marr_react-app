@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap");
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0px;
+}
+
+.App {
+  padding: 20px;
+  font-family: "Yeon sung", cursive;
+}
+
+/* () 안의 조건을 만족하는 경우에만 적용 */
+@media (min-width: 650px) {
+  .App {
+    width: 640px;
+  }
+}
+
+@media (max-width: 650px) {
+  .App {
+    width: 90vw; /* width의 90% 차지 */
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.App {
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* HEADER */
+
+header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+  display: flex;
+}
+
+header .head_text {
+  width: 90%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+header .MyButton {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* StoreList */
+
+.StoreList .menu_wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.StoreList .ControlMenu {
+  padding: 10px 10px 10px 10px;
+}
+
+.StoreList .grid_container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* StoreItem */
+
+.StoreItem {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.StoreItem .img_wrapper {
+  cursor: pointer;
+  min-width: 80px;
+  height: 160px;
+  border-radius: 5px;
+}
+
+.StoreItem .store_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80%;
+}
+
+.StoreItem .store_name {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
+
+.StoreItem .store_added_date {
+  font-size: 16px;
+  color: gray;
+  text-align: center;
+}
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  padding-top: 20px;
+}
+
+.likebtn {
+  padding-top: 10px;
+  background-color: white;
+  border: None;
+}

@@ -9,9 +9,13 @@ const MyPage= () => {
    console.log("userinfo",userinfo);
 
    return <div className="userinfo">
+      
+         <h3> 
+            name :{ userinfo[0].name}
+            <br/>
+            LV : {userinfo[0].level}
+         </h3>
 
-         <h3> name  { userinfo[0].name}</h3>
-         <h3> LV : {userinfo[0].level}</h3>
    </div>
 }
 

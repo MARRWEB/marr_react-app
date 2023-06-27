@@ -147,3 +147,43 @@ header img {
   margin-top: 15px;
   margin-bottom: 5px;
 }
+
+/* SearchList */ 
+.SearchList .search-list-wrapper {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.SearchList .search-list-wrapper .search-list {
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 2%;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5px;
+  margin: 5px;
+
+  cursor: pointer;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > img {
+  height: 250px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > span {
+  
+}

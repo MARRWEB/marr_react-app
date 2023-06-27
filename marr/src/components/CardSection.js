@@ -1,11 +1,12 @@
 import CardItem from "./CardItem";
 
-const CardSection = ({ title, restaurant_list }) => {
+const CardSection = ({ title, description, restaurant_list }) => {
   return (
     <div className="CardSection">
       <div className="card-section-wrapper">
         <div className="card-section-title">
           <h1>{title}</h1>
+          <span className="card-section-description">{description}</span>
         </div>
         <div className="card-section-slide">
           <ul className="card-slide-list">

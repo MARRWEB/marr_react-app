@@ -11,7 +11,7 @@ const MyHeader = () => {
         <li className="marrShorts" onClick={() => navigate("/shorts")}>
           MarrShorts
         </li>
-        <li className="marrRanking" onClick={() => navigate("/ranking")}>
+        <li className="marrRanking" onClick={() => navigate("/ranks")}>
           전국마라랭킹
         </li>
       </ul>

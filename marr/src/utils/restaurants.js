@@ -1,4 +1,4 @@
-export const restaurant_list = [
+export const restaurantList = [
   {
     rest_id: 1,
     rest_name: "마부마라탕",

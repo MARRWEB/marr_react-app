@@ -1,6 +1,6 @@
 import CardItem from "./CardItem";
 
-const CardSection = ({ title, description, restaurant_list }) => {
+const CardSection = ({ title, description, restaurantList }) => {
   return (
     <div className="CardSection">
       <div className="card-section-wrapper">
@@ -10,7 +10,7 @@ const CardSection = ({ title, description, restaurant_list }) => {
         </div>
         <div className="card-section-slide">
           <ul className="card-slide-list">
-            {restaurant_list.map((it) => (
+            {restaurantList.map((it) => (
               <CardItem key={it.rest_id} {...it} />
             ))}
           </ul>

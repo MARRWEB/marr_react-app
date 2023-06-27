@@ -13,8 +13,8 @@ const SearchItem = ({ rest_id, rest_img, rest_name, rest_rating }) => {
             navigate(`/restaurant/${rest_id}`);
           }}
         />
-        <p className="restaurant-name">{rest_name}</p>
-        <span>{rest_rating}</span>
+        <span className="restaurant-name">{rest_name}</span>
+        <span className="restaurant-rating">{rest_rating}</span>
       </li>
     </div>
   );

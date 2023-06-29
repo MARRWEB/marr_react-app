@@ -7,11 +7,17 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import  { useReducer, useRef, useEffect} from 'react';
 import { useState } from 'react';
 
+
+
 // pages 
 import Review from './pages/Review'
 import Like from './pages/Like'
 import MyPage from './pages/MyPage';
 import Home from './pages/Home';
+import Auth from "./pages/Auth";
+import Login from "./pages/Login";
+import GoogleButton from './pages/GoogleButton';
+
 
 export const DiaryStateContext = React.createContext();
 
@@ -42,6 +48,9 @@ function App() {
 
             <Routes>
               <Route path ="/" element = {<Home/>} />
+              <Route path="/oauth/kakao/callback" element={<Authcheck />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/login1" element={<GoogleButton />} />
               <Route path="/review" element = {<Review/>} />
               <Route path="/like" element = {<Like/>} />
               <Route path='/mypage' element = {<MyPage/>} />
@@ -57,3 +66,9 @@ function App() {
 }
 
 export default App;
+
+
+
+function Authcheck() {
+  return Auth()
+}

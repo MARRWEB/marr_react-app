@@ -11,6 +11,7 @@ import MyReview from './pages/MyReview'
 // import MyButton from './components/MyButton';
 // import MyHeader from './components/MyHeader';
 
+//nowee
 const reducer = (state, action) => {
   let newState = [];
   switch (action.type){

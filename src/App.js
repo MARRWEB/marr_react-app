@@ -4,8 +4,6 @@ import './App.css';
 import React from 'react';
 
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-import  { useReducer, useRef, useEffect} from 'react';
-import { useState } from 'react';
 
 
 
@@ -15,7 +13,6 @@ import Like from './pages/Like'
 import MyPage from './pages/MyPage';
 import Home from './pages/Home';
 import Auth from "./pages/Auth";
-import Login from "./pages/Login";
 import GoogleButton from './pages/GoogleButton';
 
 
@@ -47,10 +44,9 @@ function App() {
           <div className = "App">
 
             <Routes>
-              <Route path ="/" element = {<Home/>} />
+              <Route path ="/sidebar" element = {<Home/>} />
               <Route path="/oauth/kakao/callback" element={<Authcheck />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/login1" element={<GoogleButton />} />
+              <Route path="/login" element={<GoogleButton />} />
               <Route path="/review" element = {<Review/>} />
               <Route path="/like" element = {<Like/>} />
               <Route path='/mypage' element = {<MyPage/>} />

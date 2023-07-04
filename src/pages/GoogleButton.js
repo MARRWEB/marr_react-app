@@ -1,34 +1,35 @@
-import React from 'react';
-import GoogleLogin from 'react-google-login';
+import React, { useEffect } from 'react';
+import { GoogleLogin } from '@react-oauth/google';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
-const clientId = "158216966291-3u6h3tmrdhri9jrbf39a2i4tp9170i0f.apps.googleusercontent.com";
+const GoogleButton = () => {
+  const clientId = '1059585472363-vn4ejudkdn6fkncnnebcjoiga8bh17bt.apps.googleusercontent.com';
 
-export default function GoogleButton({ onSocial }){
-    const onSuccess = async(response) => {
-    	console.log(response);
-    
-        const { googleId, profileObj : { email, name } } = response;
-        
-        await onSocial({
-            socialId : googleId,
-            socialType : 'google',
-            email,
-            nickname : name
-        });
-    }
+  useEffect(() => {
+    // This useEffect will be called when the component mounts.
+    // If you want to trigger the navigation immediately on successful login,
+    // you can put the navigation logic here.
+  }, []);
 
-    const onFailure = (error) => {
-        console.log(error);
-    }
+  const handleSuccess = (res) => {
+    console.log('success', res);
+    window.location.href = '/sidebar'; // Navigate to the target page.
+  };
 
-    return(
-        <div>
-            <GoogleLogin
-                clientId={clientId}
-                responseType={"id_token"}
-                onSuccess={onSuccess}
-                onFailure={onFailure}/>
-        </div>
-    )
-}
+  const handleFailure = (err) => {
+    console.log('fail', err);
+  };
 
+  return (
+    <>
+      <GoogleOAuthProvider clientId={clientId}>
+        <GoogleLogin
+          onSuccess={handleSuccess}
+          onFailure={handleFailure}
+        />
+      </GoogleOAuthProvider>
+    </>
+  );
+};
+
+export default GoogleButton;

@@ -4,7 +4,7 @@ import MyButton from './../components/MyButton';
 import { useNavigate } from "react-router-dom";
 import {DiaryStateContext} from "../App";
 import MyPage from "./MyPage";
-import Login from "./Login";
+
 
 const env = process.env;
 env.PUBLIC_URL  = env.PUBLIC_URL || "";

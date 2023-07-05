@@ -189,3 +189,22 @@ header > div {
 .login {
 
 }
+
+/* google button */
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Style for the header */
+.MyHeader {
+  /* Add your styles here */
+}
+
+/* Style for the Google login button */
+.GoogleLogin {
+  /* Add your styles here */
+}

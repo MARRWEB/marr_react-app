@@ -68,14 +68,29 @@ const StoreList = () => {
           optionList={sortOptionList}
         />
       </div>
-      <div className="grid_container">
-        {getProcessedStoreList().map((it) => (
-          <StoreItem
-            key={it.id}
-            {...it}
-            toggleLiked={() => unlikeStoreById(it.id)}
-          />
-        ))}
+      <div>
+        {storeList.length > 0 ? (
+          <div className="grid_container">
+            {getProcessedStoreList().map((it) => (
+              <StoreItem
+                key={it.id}
+                {...it}
+                toggleLiked={() => unlikeStoreById(it.id)}
+              />
+            ))}
+          </div>
+        ) : (
+          <div>
+            <img
+              className="no-item-img"
+              src={process.env.PUBLIC_URL + `assets/heart.png`}
+            />
+            <div className="empty-message-big"> 아직 찜한 가게가 없어요 </div>
+            <div className="empty-message-small">
+              지금 바로 당신의 마라탕 찜 리스트를 만들어보세요 !
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

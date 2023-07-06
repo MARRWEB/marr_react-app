@@ -160,9 +160,18 @@ header img {
 }
 
 /* SearchList */ 
+.SearchList {
+  display: flex;
+  justify-content: center;
+}
+
 .SearchList .search-list-wrapper {
-  margin-left: 250px;
-  margin-right: 250px;
+  display: flex;
+  justify-content: center;
+
+  width: 1000px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .SearchList .search-list-wrapper .search-list {
@@ -173,7 +182,14 @@ header img {
 
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 2%;
+  gap: 20px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: auto;
 }
 
 .SearchList .search-list-wrapper .search-list .SearchItem > li {
@@ -182,6 +198,8 @@ header img {
   justify-content: center;
   align-items: center;
 
+  width: auto;
+  height: auto;
   padding: 5px;
   margin: 5px;
 
@@ -195,6 +213,11 @@ header img {
   border-radius: 10px;
 }
 
-.SearchList .search-list-wrapper .search-list .SearchItem > li > span {
+.SearchList .search-list-wrapper .search-list .SearchItem > li > restaurant-name {
+  margin:3px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > restaurant-rating {
+  margin:3px;
   
 }

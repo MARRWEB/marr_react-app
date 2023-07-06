@@ -117,7 +117,12 @@ header img {
 }
 
 .CardSection .card-section-wrapper .card-section-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: -10px;
+  height: 283px;
+  width: 700px;
 }
 
 .CardSection .card-section-wrapper .card-section-slide > ul {
@@ -146,6 +151,12 @@ header img {
   font-size: 18px;
   margin-top: 15px;
   margin-bottom: 5px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > button {
+  font-style: bold;
+  font-size: 25px;
+  pointer-events: none; 
 }
 
 /* SearchList */ 

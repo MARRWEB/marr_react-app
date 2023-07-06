@@ -1,6 +1,7 @@
 import CardItem from "./CardItem";
 
-const CardSection = ({ title, description, restaurantList }) => {
+const CardSection = ({ title, description, restaurantList, button }) => {
+  console.log(button);
   return (
     <div className="CardSection">
       <div className="card-section-wrapper">
@@ -9,11 +10,15 @@ const CardSection = ({ title, description, restaurantList }) => {
           <span className="card-section-description">{description}</span>
         </div>
         <div className="card-section-slide">
-          <ul className="card-slide-list">
-            {restaurantList.map((it) => (
-              <CardItem key={it.rest_id} {...it} />
-            ))}
-          </ul>
+          {button === undefined ? (
+            <ul className="card-slide-list">
+              {restaurantList.map((it) => (
+                <CardItem key={it.rest_id} {...it} />
+              ))}
+            </ul>
+          ) : (
+            button
+          )}
         </div>
       </div>
     </div>

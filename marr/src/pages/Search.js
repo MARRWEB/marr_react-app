@@ -1,5 +1,5 @@
 import { RestaurantStateContext } from "../App";
-import { useContext, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 // Components
@@ -10,6 +10,10 @@ import SearchList from "../components/SearchList";
 const Search = () => {
   const location = useLocation();
   const [input, setInput] = useState(location.state);
+
+  useEffect(() => {
+    setInput(location.state);
+  }, [location.state]);
 
   const restaurantList = useContext(RestaurantStateContext);
   const searchedList = restaurantList.filter((it) =>

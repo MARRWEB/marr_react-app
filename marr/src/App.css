@@ -2,37 +2,210 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header */
+header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header .head-logo {
+  padding: 20px;
+  font-size: 30px;
+  font-style: bold;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header > ul {
+  list-style: none;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+}
+
+header > ul > li {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+header img {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* SearchBar */
+.SearchBar {
+  padding: 10px;
+}
+
+.SearchBar .search-wrapper {
+  background-color: #ececec;
+  border-radius: 30px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchBar .search-wrapper .input-search {
+  padding-left: 25px;
+  min-width : 550px;
+  min-height : 50px;
+
+  border: none;
+  border-radius: 30px;
+  background-color: #ececec;
+  outline: none;
+
+  font-size: 18px;
+}
+
+.SearchBar .search-wrapper .btn-search {
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.SearchBar .search-wrapper .btn-search > img {
+  height: 27px;
+  width: auto;
+}
+
+/* Map */
+.Map {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+/* CardSection */
+.CardSection {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.CardSection .card-section-wrapper{
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #ececec;
+}
+
+.CardSection .card-section-wrapper .card-section-title {
+  margin: 0px;
+}
+
+.CardSection .card-section-wrapper .card-section-title > h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-size: 25px;
+}
+
+.CardSection .card-section-wrapper .card-section-title > span {
+  color: #616161;
+}
+
+.CardSection .card-section-wrapper .card-section-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  height: 283px;
+  width: 700px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul {
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li > img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li > p {
+  font-style: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > button {
+  font-style: bold;
+  font-size: 25px;
+  pointer-events: none; 
+}
+
+/* SearchList */ 
+.SearchList {
+  display: flex;
+  justify-content: center;
+}
+
+.SearchList .search-list-wrapper {
+}
+
+.SearchList .search-list-wrapper .search-list {
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem {
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+  padding: 5px;
+  margin: 5px;
+
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.SearchList .search-list-wrapper .search-list .SearchItem > li > img {
+  height: 250px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-name {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-rating {
+  color: #BF4E8C;
 }

@@ -209,3 +209,208 @@ header img {
 .SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-rating {
   color: #BF4E8C;
 }
+
+
+/*#====================== SIDEBARs */ 
+
+/* font import */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
+
+
+
+body{
+
+  background-color : #f6f6f6;
+  display : flex;
+  justify-content: center;
+  align-items : center;
+  font-family : "Nanum Pen Script";
+  min-height : 100vb;
+  margin : 0px;
+
+}
+
+/* min 화면의 크기가 650px일때만 적용된다. */
+
+@media (min-width : 650px){
+  .App{
+   width : 640px;
+  }
+}
+
+/* max 화면의 크기가 650px일때만 적용된다. */
+
+@media (max-width : 650px){
+  .App{
+    width : 90vw;
+  }
+}
+
+#root {
+  background-color : white;
+  box-shadow : rgba(100,100,111,0.2) 0p 7px 29px 0px;
+
+}
+
+.App{
+  min-height : 100vh;
+  padding-left: 20px;
+  padding-right : 20px;
+}
+
+/* HEADER */
+
+header{
+  padding-top : 20px;
+  padding-bottom: 20px;
+
+  display : flex; 
+  align-items: center;
+  border-bottom : 1px solid #e2e2e2;
+  justify-content : center;
+
+  font-size : 25px;
+
+
+}
+
+header > div {
+  display : flex;
+}
+
+
+
+
+
+/* MyButton */
+.MyButton {
+  cursor : pointer;
+  border : none;
+  border-radius : 20px;
+
+  padding-top : 10px;
+  padding-bottom : 10px;
+  padding-left : 120px;
+  padding-right : 120px;
+
+  font-size : 18px;
+
+  white-space : nowrap;
+  font-family : "Nanum Pen Script";
+
+  
+}
+
+.MyButton_positive {
+  background-color : #ececec;
+  padding-left : 200px;
+  padding-right : 200px;
+  padding-top : 100px;
+  padding-bottom : 100px;
+  display: flex;
+
+}
+
+/* userinfo */
+.userinfo{ 
+  /* padding : 100px; */
+  /* align-items: center; */
+
+  background-color : #ececec;
+  padding-left : 200px;
+  padding-right : 200px;
+  padding-top : 100px;
+  padding-bottom : 100px;
+
+  margin-top : 20px;
+  margin-bottom : 20px;
+  display: flex;
+  border-radius : 20px;
+
+
+  justify-content: center;
+  padding : 10px;
+}
+
+.userinfo h3{
+  display:flex;
+  padding-right : 400px;
+  font-size : 22px;
+  font-weight : bold;
+}
+/* Home */
+
+.Home .side{
+  display : flex;
+  justify-content : space-between;
+ 
+}
+
+
+
+.Home p{
+  padding:20px;
+  text-align:left;
+  font-size : 20px;
+  font-family : 'Yeon Sung';
+  font-weight : 400;
+  line-height : 2.5;
+}
+
+/* MARR_TYPE */
+
+.Home .marr_type{
+  background-color : #ececec;
+  text-align : center;
+  padding-left : 20px;
+  padding-right : 20px;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  margin-top : 10px;
+  border-radius : 20px;
+
+ 
+}
+
+.Home .marr_type .type{
+  text-align : left;
+}
+
+.Home .marr_type .type .flavor{
+  display : flex; 
+  justify-content : right;
+}
+
+
+/* kakao login */
+
+.kakao{
+  text-align : center;
+  font-size : 22px;
+  font-weight : bold;
+  color : #ffffff;
+  padding-left : 20px;
+  padding-right : 20px;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  margin-top : 10px;
+  border-radius : 20px;
+  float: left;
+  width : 40%;
+}
+
+/* login */
+.login {
+
+}
+
+/* google button */
+.Google {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+

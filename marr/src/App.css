@@ -31,6 +31,7 @@ body {
   min-height: 100vh;
   padding-left: 20px;
   padding-right: 20px;
+  text-align: center;
 }
 
 /* My Button  */
@@ -63,6 +64,7 @@ body {
 }
 
 /* Header */
+/*
 header {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -89,6 +91,43 @@ header .head_btn_right {
 header .head_btn_left {
   width: 25%;
   justify-content: start;
+}
+*/
+
+/* Header */
+header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  display: flex;
+  align-items: center;
+}
+
+header .head-logo {
+  padding: 20px;
+  font-size: 30px;
+  font-style: bold;
+  cursor: pointer;
+}
+
+header > ul {
+  list-style: none;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+}
+
+header > ul > li {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+header img {
+  padding: 10px;
+  cursor: pointer;
 }
 
 /* ReviewList */
@@ -267,17 +306,184 @@ header .head_btn_left {
   align-items: center;
 }
 
-/* ScoreItem */
 
+
+/* SearchBar */
+.SearchBar {
+  padding: 10px;
+}
+
+.SearchBar .search-wrapper {
+  background-color: #ececec;
+  border-radius: 30px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchBar .search-wrapper .input-search {
+  padding-left: 25px;
+  min-width : 550px;
+  min-height : 50px;
+
+  border: none;
+  border-radius: 30px;
+  background-color: #ececec;
+  outline: none;
+
+  font-size: 18px;
+}
+
+.SearchBar .search-wrapper .btn-search {
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.SearchBar .search-wrapper .btn-search > img {
+  height: 27px;
+  width: auto;
+}
+
+/* Map */
+.Map {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+/* CardSection */
+.CardSection {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.CardSection .card-section-wrapper{
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #ececec;
+}
+
+.CardSection .card-section-wrapper .card-section-title {
+  margin: 0px;
+}
+
+.CardSection .card-section-wrapper .card-section-title > h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-size: 25px;
+}
+
+.CardSection .card-section-wrapper .card-section-title > span {
+  color: #616161;
+}
+
+.CardSection .card-section-wrapper .card-section-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  height: 283px;
+  width: 700px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul {
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li > img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > ul > div > li > p {
+  font-style: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.CardSection .card-section-wrapper .card-section-slide > button {
+  font-style: bold;
+  font-size: 25px;
+  pointer-events: none; 
+}
+
+/* SearchList */ 
+.SearchList {
+  display: flex;
+  justify-content: center;
+}
+
+.SearchList .search-list-wrapper {
+}
+
+.SearchList .search-list-wrapper .search-list {
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem {
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+
+  cursor: pointer;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > img {
+  height: 250px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-name {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-rating {
+  color: #BF4E8C;
+}
+  
+/* ScoreItem */
 .ScoreItem {
   cursor: pointer;
   border-radius: 5px;
   padding-top: 20px;
   padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .ScoreItem img {

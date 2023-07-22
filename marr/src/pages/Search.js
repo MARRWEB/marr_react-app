@@ -3,7 +3,7 @@ import { useEffect, useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 // Components
-import MyHeader from "../components/MyHeader";
+import MainHeader from "../components/MainHeader";
 import SearchBar from "../components/SearchBar";
 import SearchList from "../components/SearchList";
 
@@ -22,7 +22,7 @@ const Search = () => {
 
   return (
     <div>
-      <MyHeader />
+      <MainHeader />
       <SearchBar />
       <SearchList restaurantList={searchedList} />
     </div>

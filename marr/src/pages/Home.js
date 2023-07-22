@@ -2,7 +2,7 @@ import { RestaurantStateContext } from "../App";
 import { useEffect, useState, useContext } from "react";
 
 // Components
-import MyHeader from "../components/MyHeader";
+import MainHeader from "../components/MainHeader";
 import SearchBar from "../components/SearchBar";
 import Map from "../components/Map";
 import CardSection from "../components/CardSection";
@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <div>
-      <MyHeader />
+      <MainHeader />
       <SearchBar />
       <Map />
       <CardSection

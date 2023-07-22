@@ -30,7 +30,7 @@ const ReviewItem = ({
     navigate(`/Edit/${id}`);
   };
 
-  const { onRemove } = useContext(ReviewDispatchContext);
+  // const { onRemove } = useContext(ReviewDispatchContext);
 
   return (
     <div className="ReviewItem">

@@ -10,12 +10,6 @@ body {
   margin: 0px;
 }
 
-@media (min-width: 650px) {
-  .App {
-    width: 640px;
-  }
-}
-
 @media (max-width: 650px) {
   .App {
     width: 90vw;
@@ -64,11 +58,11 @@ body {
 }
 
 /* Header */
-/*
-header {
+
+/* header {
   padding-top: 20px;
   padding-bottom: 20px;
-  display: flex; /* 배치를 가로축으로 바꿔줌 */
+  display: flex;
   align-items: center;
   border-bottom: 1px solid #e2e2e2;
 }
@@ -91,8 +85,7 @@ header .head_btn_right {
 header .head_btn_left {
   width: 25%;
   justify-content: start;
-}
-*/
+} */
 
 /* Header */
 header {
@@ -169,7 +162,6 @@ header img {
 }
 
 /* ReviewItem */
-
 .ReviewItem {
   width: 600px; /* 요소의 가로 너비 설정 */
   height: 700px;
@@ -258,17 +250,16 @@ header img {
   height: auto; /* 이미지의 세로 비율을 유지하도록 설정합니다 */
 }
 
-.content {
+/* .content {
   border-radius: 5%;
   background-color: #ffffff;
   margin-top: 20px;
   padding-top: 20px;
   padding-left: 30px;
   padding-bottom: 200px;
-}
+} */
 
 /* ReviewEditor */
-
 .ReviewEditor {
 }
 
@@ -306,8 +297,6 @@ header img {
   align-items: center;
 }
 
-
-
 /* SearchBar */
 .SearchBar {
   padding: 10px;
@@ -324,8 +313,8 @@ header img {
 
 .SearchBar .search-wrapper .input-search {
   padding-left: 25px;
-  min-width : 550px;
-  min-height : 50px;
+  min-width: 550px;
+  min-height: 50px;
 
   border: none;
   border-radius: 30px;
@@ -364,7 +353,7 @@ header img {
   width: 100%;
 }
 
-.CardSection .card-section-wrapper{
+.CardSection .card-section-wrapper {
   display: inline-block;
   border-radius: 50px;
   background-color: #ececec;
@@ -425,10 +414,10 @@ header img {
 .CardSection .card-section-wrapper .card-section-slide > button {
   font-style: bold;
   font-size: 25px;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
-/* SearchList */ 
+/* SearchList */
 .SearchList {
   display: flex;
   justify-content: center;
@@ -469,15 +458,25 @@ header img {
   border-radius: 10px;
 }
 
-.SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-name {
+.SearchList
+  .search-list-wrapper
+  .search-list
+  .SearchItem
+  > li
+  > .restaurant-name {
   margin-top: 5px;
   font-size: 20px;
 }
 
-.SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-rating {
-  color: #BF4E8C;
+.SearchList
+  .search-list-wrapper
+  .search-list
+  .SearchItem
+  > li
+  > .restaurant-rating {
+  color: #bf4e8c;
 }
-  
+
 /* ScoreItem */
 .ScoreItem {
   cursor: pointer;

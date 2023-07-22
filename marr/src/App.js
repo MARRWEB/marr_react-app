@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useReducer, useRef } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { restaurantList } from "./utils/restaurants";
+import { reviewList } from "./utils/reviews";
 
 // Components
 import Home from "./pages/Home";
@@ -10,8 +11,6 @@ import StoreReview from "./pages/StoreReview";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 import MyReview from "./pages/MyReview";
-// import MyButton from './components/MyButton';
-// import MyHeader from './components/MyHeader';
 
 const reducer = (state, action) => {
   let newState = [];
@@ -46,31 +45,8 @@ export const ReviewStateContext = React.createContext();
 export const ReviewDispatchContext = React.createContext();
 export const RestaurantStateContext = React.createContext();
 
-const dummyData = [
-  {
-    id: "마라사랑",
-    score: 5,
-    level: 3,
-    content: "존맛탱탱구리 여기 마라 개맛잇음",
-    store: "부천마라 1호점",
-    marr_pic: 1,
-    date: 1638969241492,
-    profile_pic: 1,
-  },
-  {
-    id: "부천마라왕",
-    score: 4,
-    level: 2,
-    content: "여기절대안감 개노맛",
-    store: "부천마라 3호점",
-    marr_pic: 2,
-    date: 1438969241494,
-    profile_pic: 2,
-  },
-];
-
 function App() {
-  const [data, dispatch] = useReducer(reducer, dummyData);
+  const [data, dispatch] = useReducer(reducer, reviewList);
   const dataId = useRef(0);
 
   // CREATE
@@ -131,7 +107,7 @@ function App() {
   };
   return (
     <ReviewStateContext.Provider value={data}>
-      <ReviewDispatchContext.Provider
+      <ReviewDispatchContext.Provider>
         <RestaurantStateContext.Provider value={restaurantList}>
           <BrowserRouter>
             <div className="App">

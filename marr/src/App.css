@@ -1,6 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Yeon+Sung&display=swap");
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Gothic Coding", monospace;
+  min-height: 100vh;
+  margin: 0px;
+}
+
+@media (min-width: 650px) {
+  .App {
+    width: 640px;
+  }
+}
+
+@media (max-width: 650px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .App {
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
 }
+
+/* My Button  */
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+  white-space: nowrap;
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+.MyButton_default {
+  background-color: white;
+  color: black;
+}
+
+.MyButton_positive {
+  background-color: #64c964;
+  color: white;
+}
+
+.MyButton_negative {
+  background-color: #fd565f;
+  color: white;
+}
+
+/* Header */
+/*
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex; /* 배치를 가로축으로 바꿔줌 */
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+  display: flex;
+}
+
+header .head_text {
+  width: 50%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+header .head_btn_right {
+  width: 25%;
+  justify-content: end;
+}
+
+header .head_btn_left {
+  width: 25%;
+  justify-content: start;
+}
+*/
 
 /* Header */
 header {
@@ -38,6 +130,184 @@ header img {
   cursor: pointer;
 }
 
+/* ReviewList */
+.ReviewList .first_col {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ReviewList .first_col .left_col {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: x-large;
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+.ReviewList .first_col .right_col {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ReviewList .ControlMenu {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+/* ReviewItem */
+
+.ReviewItem {
+  width: 600px; /* 요소의 가로 너비 설정 */
+  height: 700px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 40px;
+  background-color: #f6f6f6;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.ReviewItem .profile_pic {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  min-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ReviewItem .profile_pic img {
+  width: 100%; /* 이미지가 부모 요소에 가득 차도록 설정합니다 */
+  height: auto; /* 이미지의 세로 비율을 유지하도록 설정합니다 */
+}
+
+.ReviewItem .content_info {
+  margin-left: 50px;
+}
+
+.ReviewItem .first_content_info {
+  /* margin-top: 30px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.ReviewItem .user_info {
+  /* padding-top: 100px;
+  margin-left: 40px; */
+  /* text-align: center; */
+  display: flex;
+  /* margin-top: 100px; */
+}
+
+.ReviewItem .level_id {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.ReviewItem .store_date {
+  margin-top: 70px;
+  margin-left: 80px;
+  line-height: 120%;
+}
+
+.ReviewItem .btn {
+  margin-top: 70px;
+  line-height: 120%;
+}
+
+.ReviewItem .modify {
+  color: rgb(88, 70, 249);
+}
+
+.ReviewItem .delete {
+  color: rgb(255, 76, 76);
+}
+
+.ReviewItem .marr_pic {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5%;
+  min-width: 500px;
+  height: 280px;
+  display: flex;
+  overflow: hidden;
+}
+
+.ReviewItem .marr_pic img {
+  width: 100%; /* 이미지가 부모 요소에 가득 차도록 설정합니다 */
+  height: auto; /* 이미지의 세로 비율을 유지하도록 설정합니다 */
+}
+
+.content {
+  border-radius: 5%;
+  background-color: #ffffff;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 200px;
+}
+
+/* ReviewEditor */
+
+.ReviewEditor {
+}
+
+.ReviewEditor section {
+  margin-bottom: 40px;
+}
+
+.ReviewEditor h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ReviewEditor .input_score {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 2%;
+}
+
+.ReviewEditor textarea {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+}
+
+.ReviewEditor .control_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
 /* SearchBar */
 .SearchBar {
   padding: 10px;
@@ -71,7 +341,6 @@ header img {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 5px;
-
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -187,7 +456,6 @@ header img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 5px;
   margin: 5px;
 
@@ -208,4 +476,51 @@ header img {
 
 .SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-rating {
   color: #BF4E8C;
+}
+  
+/* ScoreItem */
+.ScoreItem {
+  cursor: pointer;
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ScoreItem img {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.ScoreItem span {
+  font-size: 14px;
+  text-align: center;
+}
+
+.ScoreItem_off {
+  background-color: #ececec;
+}
+
+.ScoreItem_on_1 {
+  background-color: #fd565f;
+  color: white;
+}
+
+.ScoreItem_on_2 {
+  background-color: #fd8446;
+  color: white;
+}
+
+.ScoreItem_on_3 {
+  background-color: #fdce17;
+  color: white;
+}
+
+.ScoreItem_on_4 {
+  background-color: #9dd772;
+  color: white;
+}
+
+.ScoreItem_on_5 {
+  background-color: #64c964;
+  color: white;
 }

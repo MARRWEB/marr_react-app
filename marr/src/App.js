@@ -3,6 +3,8 @@ import React, { useReducer, useRef } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { restaurantList } from "./utils/restaurants";
 import { reviewList } from "./utils/reviews";
+import { restaurantLikedList } from "./utils/restaurants_liked";
+import { reducer } from "./utils/reducer";
 
 // Components
 import Home from "./pages/Home";
@@ -11,104 +13,54 @@ import StoreReview from "./pages/StoreReview";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 import MyReview from "./pages/MyReview";
-
-const reducer = (state, action) => {
-  let newState = [];
-  switch (action.type) {
-    case "INIT": {
-      return action.data;
-    }
-    case "CREATE": {
-      const newItem = {
-        ...action.data,
-      };
-      newState = [newItem, ...state];
-      break;
-    }
-    case "REMOVE": {
-      newState = state.filter((it) => it.id !== action.targetId);
-      break;
-    }
-    case "EDIT": {
-      newState = state.map((it) =>
-        it.id === action.data.id ? { ...action.data } : it
-      );
-      break;
-    }
-    default:
-      return state;
-  }
-  return newState;
-};
+import MyMarrPlaces from "./pages/MyMarrPlaces";
 
 export const ReviewStateContext = React.createContext();
-export const ReviewDispatchContext = React.createContext();
+export const StoreDispatchContext = React.createContext();
 export const RestaurantStateContext = React.createContext();
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, reviewList);
+  // const [data, dispatch] = useReducer(reducer, reviewList);
   const dataId = useRef(0);
+  const [likedList, dispatch] = useReducer(reducer, restaurantLikedList);
 
+  const contextValues = {
+    restaurantList: restaurantList,
+    storeList: likedList,
+  };
   // CREATE
-  const onCreate = (
-    level,
-    date,
-    content,
-    score,
-    store,
-    marr_pic,
-    profile_pic
-  ) => {
+  const onCreate = (date, content, emotion) => {
     dispatch({
       type: "CREATE",
       data: {
         id: dataId.current,
-        level,
         date: new Date(date).getTime(),
         content,
-        score,
-        store,
-        marr_pic,
-        profile_pic,
+        emotion,
       },
     });
-    dataId.current += 1;
   };
-
   // REMOVE
   const onRemove = (targetId) => {
     dispatch({ type: "REMOVE", targetId });
   };
-
-  //EDIT
-  const onEdit = (
-    targetId,
-    level,
-    date,
-    content,
-    score,
-    store,
-    marr_pic,
-    profile_pic
-  ) => {
+  // EDIT
+  const onEdit = (targetId, date, content, emotion, isLiked) => {
     dispatch({
       type: "EDIT",
       data: {
         id: targetId,
-        level,
         date: new Date(date).getTime(),
         content,
-        score,
-        store,
-        marr_pic,
-        profile_pic,
+        emotion,
+        isLiked,
       },
     });
   };
   return (
-    <ReviewStateContext.Provider value={data}>
-      <ReviewDispatchContext.Provider>
-        <RestaurantStateContext.Provider value={restaurantList}>
+    <ReviewStateContext.Provider value={reviewList}>
+      <StoreDispatchContext.Provider value={{ onCreate, onEdit, onRemove }}>
+        <RestaurantStateContext.Provider value={contextValues}>
           <BrowserRouter>
             <div className="App">
               <Routes>
@@ -118,11 +70,12 @@ function App() {
                 <Route path="/New" element={<New />} />
                 <Route path="/Edit" element={<Edit />} />
                 <Route path="/MyReview" element={<MyReview />} />
+                <Route path="/MyMarrPlaces" element={<MyMarrPlaces />} />
               </Routes>
             </div>
           </BrowserRouter>
         </RestaurantStateContext.Provider>
-      </ReviewDispatchContext.Provider>
+      </StoreDispatchContext.Provider>
     </ReviewStateContext.Provider>
   );
 }

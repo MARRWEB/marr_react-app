@@ -3,7 +3,7 @@ import { useEffect, useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 // Components
-import MyHeader from "../components/MyHeader";
+import MainHeader from "../components/MainHeader";
 import SearchBar from "../components/SearchBar";
 import SearchList from "../components/SearchList";
 
@@ -15,14 +15,15 @@ const Search = () => {
     setInput(location.state);
   }, [location.state]);
 
-  const restaurantList = useContext(RestaurantStateContext);
+  const context = useContext(RestaurantStateContext);
+  const { restaurantList, storeList } = context;
   const searchedList = restaurantList.filter((it) =>
     it.rest_name.toLowerCase().includes(input)
   );
 
   return (
     <div>
-      <MyHeader />
+      <MainHeader />
       <SearchBar />
       <SearchList restaurantList={searchedList} />
     </div>

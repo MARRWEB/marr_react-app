@@ -2,13 +2,14 @@ import { RestaurantStateContext } from "../App";
 import { useEffect, useState, useContext } from "react";
 
 // Components
-import MyHeader from "../components/MyHeader";
+import MainHeader from "../components/MainHeader";
 import SearchBar from "../components/SearchBar";
 import Map from "../components/Map";
 import CardSection from "../components/CardSection";
 
 const Home = () => {
-  const restaurantList = useContext(RestaurantStateContext);
+  const context = useContext(RestaurantStateContext);
+  const { restaurantList, storeList } = context;
   const [is_login, setIsLogin] = useState(false);
 
   // useEffect(() => {
@@ -33,7 +34,7 @@ const Home = () => {
 
   return (
     <div>
-      <MyHeader />
+      <MainHeader />
       <SearchBar />
       <Map />
       <CardSection

@@ -7,13 +7,12 @@ import { restaurantLikedList } from "./utils/restaurants_liked";
 import { reducer } from "./utils/reducer";
 
 // pages
-import Review from './pages/Review'
-import Like from './pages/Like'
-import MyPage from './pages/MyPage';
-import Sidebar from './pages/Sidebar';
+import Review from "./pages/Review";
+import Like from "./pages/Like";
+import MyPage from "./pages/MyPage";
+import Sidebar from "./pages/Sidebar";
 import Auth from "./pages/Auth";
-import GoogleButton from './pages/GoogleButton';
-
+import GoogleButton from "./pages/GoogleButton";
 
 // Components
 import Home from "./pages/Home";
@@ -32,7 +31,6 @@ export const RestaurantStateContext2 = React.createContext();
 export const DiaryStateContext = React.createContext();
 export const DiraryDispatchContext = React.createContext();
 
-
 function App() {
   // const [data, dispatch] = useReducer(reducer, reviewList);
   const dataId = useRef(0);
@@ -42,7 +40,7 @@ function App() {
     restaurantList: restaurantList,
     storeList: likedList,
   };
-  
+
   // CREATE
   const onCreate = (date, content, emotion) => {
     dispatch({
@@ -73,11 +71,13 @@ function App() {
     });
   };
   return (
-     <RestaurantStateContext2.Provider value={restaurantList}>
-      <DiaryStateContext.Provider value={dummyData}>
+    <RestaurantStateContext2.Provider value={restaurantList}>
+      <DiaryStateContext.Provider value={reviewList}>
         <DiraryDispatchContext.Provider>
           <ReviewStateContext.Provider value={reviewList}>
-            <StoreDispatchContext.Provider value={{ onCreate, onEdit, onRemove }}>
+            <StoreDispatchContext.Provider
+              value={{ onCreate, onEdit, onRemove }}
+            >
               <RestaurantStateContext.Provider value={contextValues}>
                 <BrowserRouter>
                   <div className="App">
@@ -89,12 +89,15 @@ function App() {
                       <Route path="/Edit" element={<Edit />} />
                       <Route path="/MyReview" element={<MyReview />} />
                       <Route path="/MyMarrPlaces" element={<MyMarrPlaces />} />
-                      <Route path ="/sidebar" element = {<Sidebar/>} />
-                      <Route path="/oauth/kakao/callback" element={<Authcheck />} />
+                      <Route path="/sidebar" element={<Sidebar />} />
+                      <Route
+                        path="/oauth/kakao/callback"
+                        element={<Authcheck />}
+                      />
                       <Route path="/login" element={<GoogleButton />} />
-                      <Route path="/review" element = {<Review/>} />
-                      <Route path="/like" element = {<Like/>} />
-                      <Route path='/mypage' element = {<MyPage/>} />
+                      <Route path="/review" element={<Review />} />
+                      <Route path="/like" element={<Like />} />
+                      <Route path="/mypage" element={<MyPage />} />
                     </Routes>
                   </div>
                 </BrowserRouter>
@@ -109,5 +112,5 @@ function App() {
 
 export default App;
 function Authcheck() {
-  return Auth()
+  return Auth();
 }

@@ -8,7 +8,8 @@ import Map from "../components/Map";
 import CardSection from "../components/CardSection";
 
 const Home = () => {
-  const restaurantList = useContext(RestaurantStateContext);
+  const context = useContext(RestaurantStateContext);
+  const { restaurantList, storeList } = context;
   const [is_login, setIsLogin] = useState(false);
 
   // useEffect(() => {

@@ -15,7 +15,8 @@ const Search = () => {
     setInput(location.state);
   }, [location.state]);
 
-  const restaurantList = useContext(RestaurantStateContext);
+  const context = useContext(RestaurantStateContext);
+  const { restaurantList, storeList } = context;
   const searchedList = restaurantList.filter((it) =>
     it.rest_name.toLowerCase().includes(input)
   );

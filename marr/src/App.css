@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Yeon+Sung&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
 
 body {
   background-color: #f6f6f6;
@@ -10,9 +11,10 @@ body {
   margin: 0px;
 }
 
-@media (max-width: 650px) {
-  .App {
-    width: 90vw;
+@media (min-width : 650px){
+  .App{
+   width : 640px;
+   //width : 90vw;
   }
 }
 
@@ -26,6 +28,45 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
+}
+
+/* Home */
+
+.Home .side{
+  display : flex;
+  justify-content : space-between;
+ 
+}
+
+.Home p{
+  padding:20px;
+  text-align:left;
+  font-size : 20px;
+  font-family : 'Yeon Sung';
+  font-weight : 400;
+  line-height : 2.5;
+}
+
+/* MARR_TYPE */
+
+.Home .marr_type{
+  background-color : #ececec;
+  text-align : center;
+  padding-left : 20px;
+  padding-right : 20px;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  margin-top : 10px;
+  border-radius : 20px;
+}
+
+.Home .marr_type .type{
+  text-align : left;
+}
+
+.Home .marr_type .type .flavor{
+  display : flex; 
+  justify-content : right;
 }
 
 /* My Button  */
@@ -58,12 +99,16 @@ body {
 }
 
 /* MyHeader */
-header {
-  padding-top: 20px;
+header{
+  padding-top : 20px;
   padding-bottom: 20px;
-  display: flex;
+
+  display : flex; 
   align-items: center;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom : 1px solid #e2e2e2;
+  justify-content : center;
+
+  font-size : 25px;
 }
 
 header > div {
@@ -465,6 +510,70 @@ header img {
   > .restaurant-name {
   margin-top: 5px;
   font-size: 20px;
+}
+
+.SearchList .search-list-wrapper .search-list .SearchItem > li > .restaurant-rating {
+  color: #BF4E8C;
+}
+
+/* userinfo */
+.userinfo{ 
+  /* padding : 100px; */
+  /* align-items: center; */
+
+  background-color : #ececec;
+  padding-left : 200px;
+  padding-right : 200px;
+  padding-top : 100px;
+  padding-bottom : 100px;
+
+  margin-top : 20px;
+  margin-bottom : 20px;
+  display: flex;
+  border-radius : 20px;
+
+
+  justify-content: center;
+  padding : 10px;
+}
+
+.userinfo h3{
+  display:flex;
+  padding-right : 400px;
+  font-size : 22px;
+  font-weight : bold;
+}
+
+
+/* kakao login */
+
+.kakao{
+  text-align : center;
+  font-size : 22px;
+  font-weight : bold;
+  color : #ffffff;
+  padding-left : 20px;
+  padding-right : 20px;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  margin-top : 10px;
+  border-radius : 20px;
+  float: left;
+  width : 40%;
+}
+
+/* login */
+.login {
+
+}
+
+/* google button */
+.Google {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .SearchList

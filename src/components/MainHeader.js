@@ -17,7 +17,7 @@ const MainHeader = () => {
       </ul>
       <img
         src={process.env.PUBLIC_URL + `assets/icon/user_icon.png`}
-        onClick={() => navigate("/my_page")}
+        onClick={() => navigate("/sidebar")}
       />
     </header>
   );

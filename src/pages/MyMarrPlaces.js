@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-// import { StoreStateContext } from "../App";
 import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
 import StoreList from "../components/StoreList";

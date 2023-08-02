@@ -1,13 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import { StoreDispatchContext, RestaurantStateContext } from "../App";
+import { RestaurantDispatchContext, RestaurantStateContext } from "../App";
 
 import StoreItem from "./StoreItem";
-
-// select option으로 들어갈 list
-const sortOptionList = [
-  { value: "latest", name: "최신순" },
-  { value: "oldest", name: "오래된 순" },
-];
+import { sortOptionList } from "../utils/options";
 
 const ControlMenu = ({ value, onChange, optionList }) => {
   return (
@@ -28,7 +23,7 @@ const ControlMenu = ({ value, onChange, optionList }) => {
 const StoreList = () => {
   const context = useContext(RestaurantStateContext);
   const { restaurantList, storeList } = context;
-  const { onRemove } = useContext(StoreDispatchContext);
+  const { onRemove } = useContext(RestaurantDispatchContext);
 
   const [sortType, setSortType] = useState("latest");
   const [filteredData, setFilteredData] = useState(storeList);

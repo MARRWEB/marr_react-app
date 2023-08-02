@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 // import { useCallback } from "react";
 // import { ReviewDispatchContext } from "../App";
 import React, { useContext } from "react";
-import { ReviewDispatchContext } from "../App";
+import { RestaurantDispatchContext } from "../App";
 
 const ReviewItem = ({
   id,
@@ -23,14 +23,14 @@ const ReviewItem = ({
   const strDate = new Date(parseInt(date)).toLocaleDateString();
 
   const goStore = () => {
-    navigate("/StoreReview");
+    navigate("/store-review");
   };
 
   const goEdit = () => {
     navigate(`/Edit/${id}`);
   };
 
-  // const { onRemove } = useContext(ReviewDispatchContext);
+  const { onRemove } = useContext(RestaurantDispatchContext);
 
   return (
     <div className="ReviewItem">

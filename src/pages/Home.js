@@ -9,28 +9,8 @@ import CardSection from "../components/CardSection";
 
 const Home = () => {
   const context = useContext(RestaurantStateContext);
-  const { restaurantList, storeList } = context;
+  const { restaurantList } = context;
   const [is_login, setIsLogin] = useState(false);
-
-  // useEffect(() => {
-  //   const cookie = getCookie("쿠키 이름 넣기!");
-  //   if (cookie) {
-  //     setIsLogin(true);
-  //   } else {
-  //     setIsLogin(false);
-  //   }
-  // });
-
-  const getLocalTop3RestaurantList = () => {
-    const compare = (a, b) => {
-      return parseInt(b.rest_rating) - parseInt(a.rest_rating);
-    };
-
-    const copyList = JSON.parse(JSON.stringify(restaurantList));
-    const sortedList = copyList.sort(compare);
-    console.log(sortedList.slice(0, 3));
-    return sortedList.slice(0, 3);
-  };
 
   return (
     <div>

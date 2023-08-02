@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ScoreItem from "./ScoreItem";
 import React, { useState, useRef, useContext } from "react";
 import PhotoUploader from "./PhotoUploader";
-import { ReviewDispatchContext } from "../App";
+import { RestaurantDispatchContext } from "../App";
 
 const scoreList = [
   {
@@ -38,7 +38,7 @@ const ReviewEditor = () => {
   const contentRef = useRef();
   const [content, setContent] = useState("");
   const [score, setScore] = useState(3);
-  //   const { onCreate } = useContext(ReviewDispatchContext);
+  const { onCreate } = useContext(RestaurantDispatchContext);
   const handleClickScore = (score) => {
     setScore(score);
   };

@@ -22,9 +22,10 @@ const ControlMenu = ({ value, onChange, optionList }) => {
 
 const StoreList = () => {
   const context = useContext(RestaurantStateContext);
-  const { restaurantList, storeList } = context;
+  const { userList, storeList, restaurantList } = context;
   const { onRemove } = useContext(RestaurantDispatchContext);
 
+  const loggedInUserId = 1;
   const [sortType, setSortType] = useState("latest");
   const [filteredData, setFilteredData] = useState(storeList);
 
@@ -55,6 +56,22 @@ const StoreList = () => {
     }
   };
 
+  const getDibbedRestaurants = (userId) => {
+    const userData = userList.find((item) => item.id === userId);
+    const DibbedRestList = userData.dibbedRests;
+
+    const result = restaurantList
+      .map((restaurant) => {
+        const matchingEntry = DibbedRestList.find(
+          (it) => it.id === restaurant.rest_id
+        );
+        return matchingEntry ? restaurant : null;
+      })
+      .filter((it) => it !== null);
+
+    return result;
+  };
+
   return (
     <div className="StoreList">
       <div className="menu_wrapper">
@@ -67,11 +84,11 @@ const StoreList = () => {
       <div>
         {storeList.length > 0 ? (
           <div className="grid_container">
-            {getProcessedStoreList().map((it) => (
+            {getDibbedRestaurants(loggedInUserId).map((it) => (
               <StoreItem
-                key={it.id}
+                key={it.rest_id}
                 {...it}
-                toggleLiked={() => unlikeStoreById(it.id)}
+                toggleLiked={() => unlikeStoreById(it.rest_id)}
               />
             ))}
           </div>

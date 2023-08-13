@@ -1,39 +1,31 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const StoreItem = ({ id, emotion, content, date, isLiked, toggleLiked }) => {
+const StoreItem = ({ rest_id, rest_name, rest_img, toggleLiked }) => {
   const env = process.env;
+  const navigate = useNavigate();
   env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-  const strDate = new Date(parseInt(date)).toLocaleDateString();
   return (
     <div className="StoreItem">
-      <div className={["img_wrapper", `img_wrapper_${emotion}`].join(" ")}>
+      <div className="img_wrapper">
         <img
           className="store_img"
-          src={process.env.PUBLIC_URL + `assets/myPlaces/${content}.png`}
+          src={rest_img}
           alt="store_img"
+          onClick={() => navigate(`/restaurant/${rest_id}`)}
         />
         <button className="likebtn" onClick={toggleLiked}>
-          {isLiked ? (
-            <img
-              src={process.env.PUBLIC_URL + `assets/myPlaces/like.png`}
-              height="10%"
-              width="10%"
-              alt="Liked"
-            />
-          ) : (
-            <img
-              src={process.env.PUBLIC_URL + `assets/myPlaces/unlike.png`}
-              height="10%"
-              width="10%"
-              alt="Unliked"
-            />
-          )}
+          <img
+            src={process.env.PUBLIC_URL + `assets/myPlaces/like.png`}
+            height="10%"
+            width="10%"
+            alt="Liked"
+          />
         </button>
       </div>
       <div className="info_wrapper">
-        <div className="store_name">{content.replace("_", " ")}</div>
-        <div className="store_added_date">{strDate}</div>
+        <div className="store_name">{rest_name.replace("_", " ")}</div>
       </div>
     </div>
   );

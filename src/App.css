@@ -715,3 +715,58 @@ header img {
   background-color: white;
   border: None;
 }
+
+/* Restaraunt */
+.restaurant-title-header {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #e2e2e2;
+  /*align-items: */
+  font-size: 20px;
+  padding-left: 20%;
+}
+
+.restaurant-img img {
+  padding-top: 50px;
+  height: 300px;
+}
+.restaurant-title-wrap > span {
+  display: flex;
+}
+
+.restaurant-title-wrap > span > div {
+  color: rgb(255, 0, 0);
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.restaurant-info-wrap {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding-top: 20px;
+}
+
+.restaurant-info-card {
+  background-color: #e2e2e2;
+  border-radius: 50px;
+  width: 60%;
+}
+
+.restaurant-info-table {
+  width: 100%;
+  padding: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.restaurant-info-table > tr > th {
+  width: 150px;
+  padding: 10px;
+}
+
+.restaurant-info-table > tr > td {
+  padding: 10px;
+  justify-content: center;
+}

@@ -22,6 +22,7 @@ import New from "./pages/New";
 import Edit from "./pages/Edit";
 import MyReview from "./pages/MyReview";
 import MyMarrPlaces from "./pages/MyMarrPlaces";
+import Restaurants from "./pages/Restaurants";
 
 export const RestaurantDispatchContext = React.createContext();
 export const RestaurantStateContext = React.createContext();
@@ -83,6 +84,7 @@ function App() {
               <Route path="/my-marr-places" element={<MyMarrPlaces />} />
               <Route path="/oauth/kakao/callback" element={<Authcheck />} />
               <Route path="/login" element={<GoogleButton />} />
+              <Route path="/restaurant/:id" element={<Restaurants />} />
             </Routes>
           </div>
         </BrowserRouter>

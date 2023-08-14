@@ -3,7 +3,8 @@ name: CI/CD
 # 2 워크플로가 시작될 조건 지정
 on:
   push:
-    branches: [dev]
+    branches:
+      - dev
 jobs:
   build:
     runs-on: ubuntu-latest # 3 실행 환경 지정

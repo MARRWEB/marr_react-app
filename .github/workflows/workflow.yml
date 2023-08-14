@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies # 의존 파일 설치
         run: npm install
       - name: Generate build # React Build
-        run: npm run build
+        run: CI = npm run build
   deploy:
     runs-on: ubuntu-latest
     steps:

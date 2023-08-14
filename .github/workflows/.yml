@@ -1,0 +1,26 @@
+# 1 워크플로의 이름 지정
+name: CI/CD
+# 2 워크플로가 시작될 조건 지정
+on:
+  push:
+    branches: [dev]
+jobs:
+  build:
+    runs-on: ubuntu-latest # 3 실행 환경 지정
+    # 4 실행 스탭 지정
+    steps:
+      - name: Checkout source code. # Repo checkout
+        uses: actions/checkout@v3
+      - name: Check Node v # Node v 확인
+        run: node -v
+      - name: Install dependencies # 의존 파일 설치
+        run: npm install
+      - name: Generate build # React Build
+        run: npm run build
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: |
+          URL="${{ secrets.WEBHOOK_URL }}"
+          curl -X POST -d {} "$URL" -H "Content-Type: application/json"

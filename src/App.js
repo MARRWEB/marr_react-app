@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useReducer, useRef } from "react";
+import React, { useReducer, useRef, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Utils
@@ -10,7 +10,7 @@ import { restaurantLikedList } from "./utils/restaurants_liked";
 import { userList } from "./utils/users";
 
 // Pages
-import Sidebar from "./pages/Sidebar";
+import MyPage from "./pages/MyPage";
 import Auth from "./pages/Auth";
 import GoogleButton from "./pages/GoogleButton";
 
@@ -30,6 +30,7 @@ export const RestaurantStateContext = React.createContext();
 function App() {
   const [data, dispatch] = useReducer(reducer, reviewList);
   const dataId = useRef(0);
+  const [isLogged, setLogged] = useState(false);
 
   const contextValues = {
     restaurantList: restaurantList,
@@ -74,16 +75,19 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home isLogged={isLogged} />} />
               <Route path="/search" element={<Search />} />
               <Route path="/store-review" element={<StoreReview />} />
               <Route path="/new" element={<New />} />
               <Route path="/edit" element={<Edit />} />
-              <Route path="/my-page" element={<Sidebar />} />
+              <Route path="/my-page" element={<MyPage />} />
               <Route path="/my-reviews" element={<MyReview />} />
               <Route path="/my-marr-places" element={<MyMarrPlaces />} />
               <Route path="/oauth/kakao/callback" element={<Authcheck />} />
-              <Route path="/login" element={<GoogleButton />} />
+              <Route
+                path="/login"
+                element={<GoogleButton setLogged={setLogged} />}
+              />
               <Route path="/restaurant/:id" element={<Restaurants />} />
             </Routes>
           </div>

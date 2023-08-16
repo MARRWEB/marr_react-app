@@ -1,7 +1,7 @@
 import { RestaurantStateContext } from "../App";
 import { useContext } from "react";
 
-const MyPage = () => {
+const UserPage = () => {
   const context = useContext(RestaurantStateContext);
   const { userList } = context;
   console.log("userinfo", userList);
@@ -17,4 +17,4 @@ const MyPage = () => {
   );
 };
 
-export default MyPage;
+export default UserPage;

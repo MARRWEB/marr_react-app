@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
-import MyPage from "../components/MyPage";
+import UserPage from "../components/UserPage";
 
 import { RestaurantStateContext } from "../App";
 
@@ -13,7 +13,7 @@ const flavor_img = process.env.PUBLIC_URL + `/assets/flavor.png`;
 const meat_img = process.env.PUBLIC_URL + `/assets/meat.png`;
 const spicy_img = process.env.PUBLIC_URL + `/assets/spicy.png`;
 
-const Sidebar = ({ dummyData }) => {
+const MyPage = () => {
   const navigate = useNavigate();
   const context = useContext(RestaurantStateContext);
   const { userList } = context;
@@ -40,7 +40,7 @@ const Sidebar = ({ dummyData }) => {
     <div className="Home">
       <MyHeader headText={"당신의 MARR"} />
 
-      <MyPage />
+      <UserPage />
 
       <div className="side">
         <MyButton
@@ -156,4 +156,4 @@ const Sidebar = ({ dummyData }) => {
   );
 };
 
-export default Sidebar;
+export default MyPage;

@@ -7,14 +7,13 @@ import SearchBar from "../components/SearchBar";
 import Map from "../components/Map";
 import CardSection from "../components/CardSection";
 
-const Home = () => {
+const Home = (isLogged) => {
   const context = useContext(RestaurantStateContext);
   const { restaurantList } = context;
-  const [is_login, setIsLogin] = useState(false);
 
   return (
     <div>
-      <MainHeader />
+      <MainHeader logged={isLogged} />
       <SearchBar />
       <Map />
       <CardSection
@@ -22,7 +21,7 @@ const Home = () => {
         description="현재 위치를 기반으로 지역 Top3 맛집을 추천해 드려요"
         restaurantList={restaurantList.slice(0, 3)}
       />
-      {is_login ? (
+      {isLogged ? (
         <CardSection
           title="#내 취향 반영 식당"
           description="내 마라 취향에 맞는 식당을 추천해 드려요"

@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { GoogleLogin } from '@react-oauth/google';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import MyHeader from './../components/MyHeader';
+import React, { useEffect } from "react";
+import { GoogleLogin } from "@react-oauth/google";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import MyHeader from "./../components/MyHeader";
 
-
-const GoogleButton = () => {
-  const clientId = '1059585472363-vn4ejudkdn6fkncnnebcjoiga8bh17bt.apps.googleusercontent.com';
+const GoogleButton = ({ setLogged }) => {
+  const clientId =
+    "730721968234-8v16gcc0l0hs5g5243c0b17a0k3oiktc.apps.googleusercontent.com";
 
   useEffect(() => {
     // This useEffect will be called when the component mounts.
@@ -14,12 +14,13 @@ const GoogleButton = () => {
   }, []);
 
   const handleSuccess = (res) => {
-    console.log('success', res);
-    window.location.href = '/sidebar'; // Navigate to the target page.
+    console.log("success", res);
+    setLogged(true);
+    window.location.href = "/"; // Navigate to the target page.
   };
 
   const handleFailure = (err) => {
-    console.log('fail', err);
+    console.log("fail", err);
   };
 
   return (
@@ -27,10 +28,7 @@ const GoogleButton = () => {
       <MyHeader headText={"당신의 MARR"} />
       <div className="Google">
         <GoogleOAuthProvider clientId={clientId}>
-          <GoogleLogin
-            onSuccess={handleSuccess}
-            onFailure={handleFailure}
-          />
+          <GoogleLogin onSuccess={handleSuccess} onFailure={handleFailure} />
         </GoogleOAuthProvider>
       </div>
     </>

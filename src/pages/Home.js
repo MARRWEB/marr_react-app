@@ -13,7 +13,7 @@ const Home = (isLogged) => {
 
   return (
     <div>
-      <MainHeader logged={isLogged} />
+      <MainHeader />
       <SearchBar />
       <Map />
       <CardSection

@@ -1,7 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { checkLoginState } from "../utils/auth/checkLoginState";
 
-const MainHeader = ({ logged }) => {
+const MainHeader = () => {
   const navigate = useNavigate();
+  let IsLogged = checkLoginState();
+
+  const logOut = () => {
+    localStorage.removeItem("userToken");
+    IsLogged = false;
+    navigate("/");
+  };
+
   return (
     <header>
       <div className="head-logo" onClick={() => navigate("/")}>
@@ -14,17 +23,17 @@ const MainHeader = ({ logged }) => {
         <li className="marrRanking" onClick={() => navigate("/ranks")}>
           전국마라랭킹
         </li>
-        {logged ? (
+        {IsLogged ? (
+          <li className="marrLogout" onClick={() => logOut()}>
+            로그아웃
+          </li>
+        ) : (
           <li className="marrLogin" onClick={() => navigate("/login")}>
             로그인
           </li>
-        ) : (
-          <li className="marrLogout" onClick={() => navigate("/")}>
-            로그아웃
-          </li>
         )}
       </ul>
-      {logged ? (
+      {IsLogged ? (
         <img
           src={process.env.PUBLIC_URL + `assets/icon/user_icon.png`}
           onClick={() => navigate("/my-page")}

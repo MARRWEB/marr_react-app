@@ -12,7 +12,7 @@ import { userList } from "./utils/users";
 // Pages
 import MyPage from "./pages/MyPage";
 import Auth from "./pages/Auth";
-import GoogleButton from "./pages/GoogleButton";
+import GoogleAuth from "./pages/GoogleAuth";
 
 // Components
 import Home from "./pages/Home";
@@ -23,6 +23,7 @@ import Edit from "./pages/Edit";
 import MyReview from "./pages/MyReview";
 import MyMarrPlaces from "./pages/MyMarrPlaces";
 import Restaurants from "./pages/Restaurants";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 export const RestaurantDispatchContext = React.createContext();
 export const RestaurantStateContext = React.createContext();
@@ -30,7 +31,6 @@ export const RestaurantStateContext = React.createContext();
 function App() {
   const [data, dispatch] = useReducer(reducer, reviewList);
   const dataId = useRef(0);
-  const [isLogged, setLogged] = useState(false);
 
   const contextValues = {
     restaurantList: restaurantList,
@@ -75,19 +75,19 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <Routes>
-              <Route path="/" element={<Home isLogged={isLogged} />} />
+              <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
               <Route path="/store-review" element={<StoreReview />} />
               <Route path="/new" element={<New />} />
               <Route path="/edit" element={<Edit />} />
-              <Route path="/my-page" element={<MyPage />} />
+              <Route
+                path="/my-page"
+                element={<ProtectedRoute element={<MyPage />} />}
+              />
               <Route path="/my-reviews" element={<MyReview />} />
               <Route path="/my-marr-places" element={<MyMarrPlaces />} />
               <Route path="/oauth/kakao/callback" element={<Authcheck />} />
-              <Route
-                path="/login"
-                element={<GoogleButton setLogged={setLogged} />}
-              />
+              <Route path="/login" element={<GoogleAuth />} />
               <Route path="/restaurant/:id" element={<Restaurants />} />
             </Routes>
           </div>

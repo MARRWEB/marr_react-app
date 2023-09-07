@@ -24,8 +24,8 @@ body {
 
 .App {
   min-height: 100vh;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
   text-align: center;
 }
 
@@ -166,63 +166,117 @@ header img {
 }
 
 /* ReviewList */
+.ReviewList {
+  background-color: #f3f3f3;
+}
+
+.ReviewList .ReviewBack {
+  border-radius: 10px; /* 박스 모서리를 둥글게 만들 수 있습니다. */
+  padding-left: 550px; /* 적절한 안쪽 여백을 지정하세요. */
+  padding-right: 550px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과를 추가할 수 있습니다. */
+}
+
+.ReviewList .ReviewBack > * {
+  background-color: #ffffff; /* 패딩 안쪽 컬러를 흰색으로 유지합니다. */
+}
 .ReviewList .first_col {
-  margin-top: 20px;
-  margin-bottom: 30px;
   display: flex;
-  justify-content: space-between;
+
+  justify-content: center;
 }
 
 .ReviewList .first_col .left_col {
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 550px;
+  background-color: #ffffff;
   display: flex;
-  justify-content: flex-start;
-  font-size: x-large;
+  font-size: small;
   font-family: "Nanum Gothic Coding", monospace;
-}
-
-.ReviewList .first_col .right_col {
-  margin-top: 40px;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .ReviewList .ControlMenu {
-  margin-right: 10px;
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   cursor: pointer;
   font-size: 14px;
   font-family: "Nanum Gothic Coding", monospace;
+  text-align: center;
+}
+
+.ReviewList .second_col {
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
 }
 
 /* ReviewItem */
 .ReviewItem {
-  width: 600px; /* 요소의 가로 너비 설정 */
-  height: 700px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 40px;
-  background-color: #f6f6f6;
-  display: flex;
+  margin: 0 auto;
+  width: 550px;
+  height: 500px;
   margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.ReviewItem .user_marrpic {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ReviewItem .user_info {
+  white-space: nowrap;
+  padding-top: 40px;
+  font-size: 1.7ch;
+}
+
+.ReviewItem .store_btn {
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.ReviewItem .store {
+  font-size: 1.5ch;
+}
+.ReviewItem .btn {
+  display: flex;
+  gap: 3px;
+}
+.ReviewItem .MyButton {
+  width: 50px; /* 원하는 너비 설정 */
+  height: 20px; /* 원하는 높이 설정 */
+
+  /* 기타 스타일 속성 (예: 폰트 크기, 패딩 등) */
+  font-size: 1.5ch;
+  padding: 5px 10px;
+}
+.ReviewItem .marr_pic {
+  cursor: pointer;
+  min-width: 400px;
+  height: 250px;
+  display: flex;
+  overflow: hidden;
+  padding-top: 5px;
+}
 .ReviewItem .profile_pic {
   margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer;
-  min-width: 80px;
-  height: 80px;
+  min-width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -234,73 +288,24 @@ header img {
   height: auto; /* 이미지의 세로 비율을 유지하도록 설정합니다 */
 }
 
-.ReviewItem .content_info {
-  margin-left: 50px;
-}
-
-.ReviewItem .first_content_info {
-  /* margin-top: 30px; */
-  display: flex;
-  justify-content: space-between;
-}
-
-.ReviewItem .user_info {
-  /* padding-top: 100px;
-  margin-left: 40px; */
-  /* text-align: center; */
-  display: flex;
-  /* margin-top: 100px; */
-}
-
-.ReviewItem .level_id {
-  margin-top: 30px;
-  margin-left: 10px;
-}
-
-.ReviewItem .store_date {
-  margin-top: 70px;
-  margin-left: 80px;
-  line-height: 120%;
-}
-
-.ReviewItem .btn {
-  margin-top: 70px;
-  line-height: 120%;
-}
-
-.ReviewItem .modify {
-  color: rgb(88, 70, 249);
-}
-
-.ReviewItem .delete {
-  color: rgb(255, 76, 76);
-}
-
-.ReviewItem .marr_pic {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 5%;
-  min-width: 500px;
-  height: 280px;
-  display: flex;
-  overflow: hidden;
-}
-
 .ReviewItem .marr_pic img {
   width: 100%; /* 이미지가 부모 요소에 가득 차도록 설정합니다 */
   height: auto; /* 이미지의 세로 비율을 유지하도록 설정합니다 */
 }
-
 .content {
-  border-radius: 5%;
+  white-space: nowrap;
   background-color: #ffffff;
-  margin-top: 20px;
-  padding-top: 20px;
-  padding-left: 30px;
-  padding-bottom: 200px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 120px;
+  text-align: left;
+  font-size: 1.7ch;
 }
-
+.ReviewItem .store_date {
+  white-space: nowrap;
+  text-align: right;
+  font-size: 1.2ch;
+}
 /* ReviewEditor */
 .ReviewEditor {
 }

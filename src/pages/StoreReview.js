@@ -4,6 +4,7 @@ import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
 import { RestaurantStateContext } from "../App";
 import StoreReviewList from "../components/StoreReviewList";
+import ReviewItem from "../components/ReviewItem";
 
 const StoreReview = () => {
   const context = useContext(RestaurantStateContext);
@@ -11,10 +12,15 @@ const StoreReview = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [curDate, setCurDate] = useState(new Date());
+  const { storeName } = useParams(); // 라우트 파라미터에서 storeName 가져오기
 
   useEffect(() => {
-    setData(reviewList);
-  }, [reviewList]);
+    // 가게 이름으로 리뷰 필터링
+    const filteredReviews = reviewList.filter(
+      (review) => review.store === storeName
+    );
+    setData(filteredReviews);
+  }, [reviewList, storeName]);
 
   useEffect(() => {
     console.log(data);
@@ -23,10 +29,11 @@ const StoreReview = () => {
   return (
     <div>
       <MyHeader
-        headText={"리뷰"}
+        headText={storeName + "  " + "리뷰"}
         leftChild={<MyButton text={"<"} onClick={() => navigate(-1)} />}
       />
-      <StoreReviewList storereviewList={data} />
+
+      <StoreReviewList reviewList={data}></StoreReviewList>
     </div>
   );
 };

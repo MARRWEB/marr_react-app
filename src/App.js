@@ -75,7 +75,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
-              <Route path="/store-review" element={<StoreReview />} />
+              <Route
+                path="/store-review/:storeName"
+                element={<StoreReview />}
+              />
               <Route path="/new" element={<New />} />
               <Route path="/edit" element={<Edit />} />
               <Route path="/my-page" element={<Sidebar />} />

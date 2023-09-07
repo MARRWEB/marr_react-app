@@ -55,28 +55,29 @@ const ReviewList = ({ reviewList }) => {
 
   return (
     <div className="ReviewList">
-      <div className="first_col">
-        <div className="left_col">
-          <h4>내 리뷰 {reviewList.length}개</h4>
-        </div>
-        <div className="right_col">
-          <ControlMenu
-            value={sortType}
-            onChange={setSortType}
-            optionList={sortOptionList}
-          />
-          <ControlMenu
-            value={filter}
-            onChange={setFilter}
-            optionList={filterOptionList}
-          />
-        </div>
-      </div>
+      <div className="ReviewBack">
+        <div className="first_col">
+          <div className="left_col">
+            <h4>내 리뷰 {reviewList.length}개</h4>
 
-      <div className="second_col">
-        {getProcessedReviewList().map((it) => (
-          <ReviewItem key={it.id} {...it} />
-        ))}
+            <ControlMenu
+              value={sortType}
+              onChange={setSortType}
+              optionList={sortOptionList}
+            />
+            <ControlMenu
+              value={filter}
+              onChange={setFilter}
+              optionList={filterOptionList}
+            />
+          </div>
+        </div>
+
+        <div className="second_col">
+          {getProcessedReviewList().map((it) => (
+            <ReviewItem key={it.id} {...it} />
+          ))}
+        </div>
       </div>
     </div>
   );

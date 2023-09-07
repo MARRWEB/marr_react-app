@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import MyButton from "./MyButton";
 // import MyButton from "./MyButton";
 // import { useCallback } from "react";
 // import { ReviewDispatchContext } from "../App";
 import React, { useContext } from "react";
-import { RestaurantDispatchContext } from "../App";
+import { RestaurantDispatchContext, RestaurantStateContext } from "../App";
 
 const ReviewItem = ({
   id,
@@ -16,6 +17,7 @@ const ReviewItem = ({
   profile_pic,
 }) => {
   const navigate = useNavigate();
+  const { storeList } = useContext(RestaurantStateContext);
 
   const env = process.env;
   env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -23,7 +25,7 @@ const ReviewItem = ({
   const strDate = new Date(parseInt(date)).toLocaleDateString();
 
   const goStore = () => {
-    navigate("/store-review");
+    navigate(`/store-review/${store}`);
   };
 
   const goEdit = () => {
@@ -34,41 +36,46 @@ const ReviewItem = ({
 
   return (
     <div className="ReviewItem">
-      <div className="content_info">
-        <div className="first_content_info">
-          <div className="user_info">
-            <div
-              className={["profile_pic", `profile_pic_${profile_pic}`].join(
-                " "
-              )}
-            >
-              <img
-                src={process.env.PUBLIC_URL + `/assets/user${profile_pic}.png`}
-              />
-            </div>
-            <div className="level_id">
-              <div className="level">Level {level}</div>
-              <div className="id">{id}</div>
-            </div>
+      <div className="user_marrpic">
+        <div className="user_info">
+          <div
+            className={["profile_pic", `profile_pic_${profile_pic}`].join(" ")}
+          >
+            <img
+              src={process.env.PUBLIC_URL + `/assets/user${profile_pic}.png`}
+            />
           </div>
-          <div className="store_date">
+          <div className="level_id">
+            <div className="id">{id}</div>
+            <div className="level">Level {level}</div>
+          </div>
+        </div>
+        <div className="right_contents">
+          <div className="store_btn">
             <div className="store">{store}</div>
-            <div className="date">{strDate}</div>
-          </div>
-          <div className="btn">
-            <div className="delete">
-              <button>삭제하기</button>
+            <div className="btn">
+              <div className="delete">
+                <MyButton
+                  text={"삭제"}
+                  type={"negative"}
+                  onClick={(goEdit) => {}}
+                />
+              </div>
+              <div className="modify">
+                <MyButton
+                  text={"수정"}
+                  type={"positive"}
+                  onClick={(goEdit) => {}}
+                />
+              </div>
             </div>
-            <div className="modify">
-              <button onClick={goEdit}>수정하기</button>
-            </div>
           </div>
+          <div className={["marr_pic", `marr_pic_${marr_pic}`].join(" ")}>
+            <img src={process.env.PUBLIC_URL + `/assets/marr${marr_pic}.png`} />
+          </div>
+          <div className="content">{content}</div>
+          <div className="store_date">{strDate}</div>
         </div>
-
-        <div className={["marr_pic", `marr_pic_${marr_pic}`].join(" ")}>
-          <img src={process.env.PUBLIC_URL + `/assets/marr${marr_pic}.png`} />
-        </div>
-        <div className="content">{content}</div>
       </div>
     </div>
   );
